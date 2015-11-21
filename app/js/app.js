@@ -21,7 +21,10 @@ var app = {
     },
 
     onLateBusLoad: function(data, status, xhr) {
-        console.log(data);
+        // TODO Set update time...
+
+        var tpl = Handlebars.compile($('#buslist-template').html());
+        $('#lateBusList').html(tpl({ buses: data.delayedBuses }));
     }
 };
 
